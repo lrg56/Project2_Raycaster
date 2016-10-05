@@ -354,7 +354,7 @@ Pixel* raycast(Object** objects, int pW, int pH){
   }
   return image;
 }
-	 
+//Tracks the location of the plane	 
 int planeIntersect(Object* object, double* rO, double* rD){
   double* nor = object->plane.normal;
   double* pos = object->plane.position;
@@ -367,7 +367,7 @@ int planeIntersect(Object* object, double* rO, double* rD){
     return -1;
   }
 }
-
+//Tracks the location of the sphere using the quaradic formula
 int sphereIntersect(Object* object, double* rO, double* rD){
   double r = object->sphere.radius;
   double* pos = object->sphere.position;
@@ -385,7 +385,7 @@ int sphereIntersect(Object* object, double* rO, double* rD){
   if(t1 >= 0)
     return -1;
 }
-
+//Writes the file to P3
 int imageWrite(Pixel* image, char* input, int pW, int pH){
   FILE* fw = fopen(input, "w");
 
